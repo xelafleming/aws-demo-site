@@ -1,6 +1,11 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import {Amplify} from "aws-amplify";
+import awsConfig from "./aws-exports";
+import {withAuthenticator} from "aws-amplify-react";
+
+Amplify.configure(awsConfig);
 
 function App() {
   return (
@@ -8,19 +13,11 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-          Edit <code>src/App.js</code> and save to reload.
+          Welcome to the AWS Demo Site
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
       </header>
     </div>
   );
 }
 
-export default App;
+export default withAuthenticator(App, true);
