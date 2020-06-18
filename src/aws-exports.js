@@ -9,8 +9,8 @@ const awsConfig = {
         "profile",
         "openid"
       ],
-      redirectSignIn: "http://demo.roorise.dev",
-      redirectSignOut: "http://demo.roorise.dev",
+      redirectSignIn: "https://demo.roorise.dev",
+      redirectSignOut: "https://demo.roorise.dev",
       responseType: "code"
     }
   }
