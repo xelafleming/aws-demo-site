@@ -1,7 +1,6 @@
 import React, { Component } from "react";
-import {AuthClass as Auth} from "@aws-amplify/auth/lib/Auth";
-import PostMessage from "./message/PostMessage";
-import MessageFeed from "./message/MessageFeed";
+import Feed from "./message/Feed";
+import {Auth} from "aws-amplify";
 
 export class InternalApp extends Component {
   constructor(props) {
@@ -10,8 +9,7 @@ export class InternalApp extends Component {
   }
 
   signOut() {
-    var auth = new Auth()
-    auth.signOut();
+    Auth.signOut();
   }
 
   render() {
@@ -22,8 +20,7 @@ export class InternalApp extends Component {
               <span className="navbar-brand">AWS Demo</span>
               <button className="btn btn-primary" type="submit" onClick={this.signOut}>Sign out!</button>
             </nav>
-            <PostMessage />
-            <MessageFeed />
+            <Feed />
           </>
       );
     } else {
