@@ -26,7 +26,7 @@ function Feed() {
           )
         }
     )
-  }, [isPosting, isDeleting])
+  }, [isPosting, isDeleting, isUpdating])
   const handleSubmitPost = (event) => {
     event.preventDefault();
     setPosting(true);
